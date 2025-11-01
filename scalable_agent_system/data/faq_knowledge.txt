@@ -1,0 +1,4 @@
+PayPal refund policy: refunds are typically issued within 5-7 business days.
+Invoice flow: create invoice, send to customer, follow-up, mark paid.
+Dispute flow: open dispute, provide evidence, escalate to claim.
+
