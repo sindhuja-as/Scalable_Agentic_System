@@ -11,12 +11,11 @@ def output_node(state):
         return {**state.dict(), "final_output": state.final_output}
         
     final = (
-        # f"🧠 Reasoning: {reasoning}\n"
-        f"🧰 Tools Used: {tool}\n"
-        f"📊 Result: {result}\n"
-        # f"📚 Context: {context}\n"
+        f" Tools Used: {tool}\n"
+        f" Result: {result}\n"       
         
     )
     logging.info(f"Final output summary — Tool: {tool}, Result: {result}")
 
     return {**state.dict(), "final_output": final}
+
