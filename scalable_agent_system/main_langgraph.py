@@ -43,7 +43,7 @@ Usage:
         $ python main_langgraph.py
 """
     log_system_capabilities()
-    print("🤖 Scalable LangGraph Agent System\n(Type 'exit' to quit)\n")
+    print("Scalable LangGraph Agent System\n(Type 'exit' to quit)\n")
 
     graph = build_graph()
 
@@ -61,4 +61,5 @@ Usage:
 
 if __name__ == "__main__":
     main()
+
 
