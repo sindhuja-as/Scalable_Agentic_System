@@ -80,7 +80,7 @@ def rag_query_handler(query):
         str: The generated response based on the retrieved context, or an error or
         fallback message if no context is available.
     """
-    # 1️⃣ Retrieve relevant context
+    # Retrieve relevant context
     relevant_contexts = vector_retrieve(query, top_k=3)
     relevant_context = "\n\n".join(relevant_contexts)
 
@@ -89,7 +89,7 @@ def rag_query_handler(query):
             "I'm sorry, I couldn't find any relevant information in my documents about that."
         )
 
-    # 2️⃣ Build router-style prompt
+    # Build router-style prompt
     router_prompt = f"""You are a helpful sales executive. Based ONLY on the provided context, answer the user's question.
 If the answer is not in the context, say that you cannot find the information in the provided documents.
 
@@ -99,7 +99,7 @@ Context:
 User Query: {query}
 '''"""
 
-    # 3️⃣ Generate response using OpenRouter API (Mistral model)
+    # Generate response using OpenRouter API (Mistral model)
     try:
         response = llm.chat.completions.create(
             model="mistralai/mistral-7b-instruct-v0.2",
@@ -110,4 +110,5 @@ User Query: {query}
         return raw_output
 
     except Exception as e:
-        return f"⚠️ An error occurred while generating a response: {e}"
+
+        return f"An error occurred while generating a response: {e}"
