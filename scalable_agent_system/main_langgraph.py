@@ -1,6 +1,21 @@
 from graph.graph_builder import build_graph
 from graph.state_schema import AgentState
 from core.config import log_system_capabilities
+from langsmith import traceable  
+
+@traceable(name="Agentic System Run")  
+def run_agent(graph, state):
+    """
+    Executes a single agentic workflow trace under LangSmith observability.
+
+    Args:
+        graph: The compiled LangGraph workflow object.
+        state: The current AgentState containing the user query and intermediate variables.
+
+    Returns:
+        dict: The final agent state after all tool and reasoning steps.
+    """
+    return graph.invoke(state)
 
 def main():
     """
@@ -38,7 +53,7 @@ Usage:
             break
 
         state = AgentState(user_query=q)
-        final_state = graph.invoke(state)
+        final_state = run_agent(graph, state)
 
         print("\n=== Final Output ===")
         print(final_state["final_output"])
@@ -46,3 +61,4 @@ Usage:
 
 if __name__ == "__main__":
     main()
+
