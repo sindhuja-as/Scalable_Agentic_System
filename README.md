@@ -4,7 +4,6 @@
 
 ### **Version:** 1.0
 
----
 
 ## Overview
 
@@ -12,28 +11,28 @@ This project demonstrates the design of a **Scalable Agentic System** capable of
 It uses **LangGraph** for flow orchestration and **ChromaDB** for context-aware retrieval (RAG).
 The system intelligently routes user queries to the appropriate tools through a modular, multi-layered architecture.
 
----
 
-## ⚙️ How to Run the Project
+
+##  How to Run the Project
 
 ### 1. Clone the Repository
 
-```bash
+
 git clone https://github.com/your-username/scalable_agent_system.git
 cd scalable_agent_system
-```
+
 
 ### 2. Install Dependencies
 
-```bash
+
 pip install -r requirements.txt
-```
+
 
 ### 3. Run the Application
 
-```bash
+
 python main_langgraph.py
-```
+
 
 ### 4. Interact with the Agent
 
@@ -104,7 +103,7 @@ scalable_agent_system/
   * **rag_tool.py:** Retrieves context from ChromaDB for RAG-based responses.
   * **system_search_tool.py:** Searches logs, available tools, or system data.
 
----
+
 
 ## Key Design Features
 
@@ -121,19 +120,19 @@ scalable_agent_system/
 * **Error Handling:**
   Graceful handling of missing tools, API failures, or retrieval issues to ensure stable execution.
 
----
 
-## 🧾 Requirements
+
+##  Requirements
 
 To install all dependencies:
 
-```bash
+
 pip install -r requirements.txt
-```
-## 💡 Example Queries
+
+## Example Queries
 
 * “Send an invoice of INV-1001 through email
 * “Search system capabilities.”
 * “Retrieve documentation about PayPal invoices.”
 
----
+
