@@ -1,4 +1,3 @@
-# Scalable_Agentic_System
 # Scalable Agentic System Design
 
 ### **Author:** Sindhuja S
